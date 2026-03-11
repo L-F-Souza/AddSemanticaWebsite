@@ -1,14 +1,3 @@
-{{/*
-  SHORTCODE: divider
-  A horizontal rule with optional label.
-
-  USAGE:
-    {{</* divider */>}}
-    {{</* divider label="Or continue with" */>}}
-
-  OPTIONS:
-    label: optional centred text label on the divider
-*/}}
 {{ $label := .Get "label" | default "" }}
 <div class="sc-divider{{ if $label }} sc-divider--labelled{{ end }}">
   {{ if $label }}<span class="sc-divider__label">{{ $label }}</span>{{ end }}

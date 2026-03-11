@@ -1,15 +1,1 @@
-{{/*
-  SHORTCODE: highlight
-  Wraps inline text with a branded colour highlight.
-
-  USAGE:
-    {{</* highlight color="orange" */>}}your text{{</* /highlight */>}}
-
-  OPTIONS (color):
-    orange (default) | teal | cyan | red | light | dark
-
-  EXAMPLES:
-    This is {{</* highlight */>}}important{{</* /highlight */>}} info.
-    This is {{</* highlight color="teal" */>}}a teal highlight{{</* /highlight */>}}.
-*/}}
 <span class="hl hl--{{ .Get "color" | default "orange" }}">{{ .Inner }}</span>

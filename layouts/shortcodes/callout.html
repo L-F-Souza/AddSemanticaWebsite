@@ -1,24 +1,3 @@
-{{/*
-  SHORTCODE: callout
-  A full-width callout box for tips, warnings, notes, and errors.
-
-  USAGE:
-    {{</* callout type="info" title="Note" */>}}
-    Your message here. Supports **markdown**.
-    {{</* /callout */>}}
-
-  OPTIONS (type):
-    info (default) | tip | warning | danger
-
-  EXAMPLES:
-    {{</* callout type="tip" title="Pro tip" */>}}
-    Use design tokens instead of hardcoded values.
-    {{</* /callout */>}}
-
-    {{</* callout type="warning" title="Breaking change" */>}}
-    This API changed in v2.0. See the migration guide.
-    {{</* /callout */>}}
-*/}}
 {{ $type  := .Get "type"  | default "info" }}
 {{ $title := .Get "title" | default "" }}
 {{ $icons := dict "info" "ℹ" "tip" "✓" "warning" "⚠" "danger" "✕" }}

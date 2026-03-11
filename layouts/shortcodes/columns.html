@@ -1,29 +1,3 @@
-{{/*
-  SHORTCODE: columns
-  Splits content into two columns using the 1:1.61 golden ratio.
-
-  USAGE:
-    {{</* columns */>}}
-    Left column content (61.8% wide). Supports **markdown**.
-    ---split---
-    Right column content (38.2% wide).
-    {{</* /columns */>}}
-
-  OPTIONS:
-    ratio: golden (default) | equal | reverse
-      golden  = left 61.8% / right 38.2%
-      equal   = 50% / 50%
-      reverse = left 38.2% / right 61.8%
-
-  EXAMPLE:
-    {{</* columns ratio="golden" */>}}
-    ### Why SEMANTICA?
-    Build consistent, accessible apps faster.
-    ---split---
-    ### Get started
-    Install in under 5 minutes with npm.
-    {{</* /columns */>}}
-*/}}
 {{ $ratio := .Get "ratio" | default "golden" }}
 {{ $parts := split .Inner "---split---" }}
 <div class="sc-columns sc-columns--{{ $ratio }}">
