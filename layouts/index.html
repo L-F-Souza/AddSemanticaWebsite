@@ -4,16 +4,18 @@
 
 <!-- HERO -->
 <div class="hero">
-  <div class="hero-left">
-    <h1>{{ .Params.hero_title | safeHTML }}</h1>
-    <p>{{ .Params.hero_subtitle | safeHTML }}</p>
-  </div>
-  <div class="hero-right">
-    <div class="hero-actions">
-      <a href="{{ .Params.cta_primary_url }}" class="btn-primary">{{ .Params.cta_primary_label }} →</a>
-      <a href="{{ .Params.cta_secondary_url }}" class="btn-outline">
-        <span class="play-icon"></span> {{ .Params.cta_secondary_label }}
-      </a>
+  <div class="hero-inner">
+    <div class="hero-left">
+      <h1>{{ .Params.hero_title | safeHTML }}</h1>
+      <p>{{ .Params.hero_subtitle | safeHTML }}</p>
+    </div>
+    <div class="hero-right">
+      <div class="hero-actions">
+        <a href="{{ .Params.cta_primary_url }}" class="btn-primary">{{ .Params.cta_primary_label }} →</a>
+        <a href="{{ .Params.cta_secondary_url }}" class="btn-outline">
+          <span class="play-icon"></span> {{ .Params.cta_secondary_label }}
+        </a>
+      </div>
     </div>
   </div>
 </div>
@@ -22,16 +24,18 @@
 
 <!-- WHY CHOOSE SEMANTICA -->
 <section class="features" id="features">
-  <h2>{{ .Params.why_title | safeHTML }}</h2>
-  <p class="features-sub">{{ .Params.why_subtitle | safeHTML }}</p>
-  <div class="features-grid">
-    {{ range .Params.why_cards }}
-    <div class="feature-card">
-      <div class="feature-icon">{{ .icon | safeHTML }}</div>
-      <h3>{{ .title | safeHTML }}</h3>
-      <p>{{ .description | safeHTML }}</p>
+  <div class="container">
+    <h2>{{ .Params.why_title | safeHTML }}</h2>
+    <p class="features-sub">{{ .Params.why_subtitle | safeHTML }}</p>
+    <div class="features-grid">
+      {{ range .Params.why_cards }}
+      <div class="feature-card">
+        <div class="feature-icon">{{ .icon | safeHTML }}</div>
+        <h3>{{ .title | safeHTML }}</h3>
+        <p>{{ .description | safeHTML }}</p>
+      </div>
+      {{ end }}
     </div>
-    {{ end }}
   </div>
 </section>
 
@@ -39,25 +43,27 @@
 
 <!-- FEATURES -->
 <section class="feat-section">
-  <div class="feat-header">
-    <div class="feat-header-left">
-      <p class="feat-eyebrow">Features</p>
-      <h2>{{ .Params.feat_title | safeHTML }}</h2>
-    </div>
-    <div class="feat-header-right">
-      <p>{{ .Params.feat_subtitle | safeHTML }}</p>
-    </div>
-  </div>
-  <div class="feat-grid">
-    {{ range .Params.features }}
-    <div class="feat-item">
-      <div class="feat-icon-wrap">{{ .icon | safeHTML }}</div>
-      <div class="feat-text">
-        <h3>{{ .title | safeHTML }}</h3>
-        <p>{{ .description | safeHTML }}</p>
+  <div class="container">
+    <div class="feat-header">
+      <div class="feat-header-left">
+        <p class="feat-eyebrow">Features</p>
+        <h2>{{ .Params.feat_title | safeHTML }}</h2>
+      </div>
+      <div class="feat-header-right">
+        <p>{{ .Params.feat_subtitle | safeHTML }}</p>
       </div>
     </div>
-    {{ end }}
+    <div class="feat-grid">
+      {{ range .Params.features }}
+      <div class="feat-item">
+        <div class="feat-icon-wrap">{{ .icon | safeHTML }}</div>
+        <div class="feat-text">
+          <h3>{{ .title | safeHTML }}</h3>
+          <p>{{ .description | safeHTML }}</p>
+        </div>
+      </div>
+      {{ end }}
+    </div>
   </div>
 </section>
 
