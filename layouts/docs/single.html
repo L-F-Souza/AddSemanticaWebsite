@@ -1,20 +1,5 @@
 {{ define "main" }}
 
-<!-- ═══════════════════════════════════════════════════
-     PAGE: Documentation
-     URL: /docs/<group>/<page>/
-     LAYOUT: layouts/docs/single.html
-     SIDEBAR CONFIG: data/docs-sidebar.yaml
-     CONTENT FILES: content/docs/<group>/*.md
-     STYLESHEET: static/css/docs.css
-     SCRIPT: static/js/docs.js
-
-     Each .md file in content/docs/ subfolders is
-     automatically picked up and listed in the sidebar.
-     Order is controlled by `weight` in each file's
-     front matter. Groups are defined in data/docs-sidebar.yaml
-════════════════════════════════════════════════════ -->
-
 <div class="docs-shell">
 
   <!-- SIDEBAR -->
@@ -30,9 +15,11 @@
 
     {{ range .Site.Data.docsSidebar.groups }}
       {{ $group := . }}
-      {{ $sectionPath := printf "docs/%s" $group.folder }}
-      {{ $pages := where (where $.Site.Pages "Section" $sectionPath) "Kind" "page" }}
-      {{ $pages = $pages.ByWeight }}
+      {{ $sectionPages := $.Site.GetPage (printf "docs/%s" $group.folder) }}
+      {{ $pages := slice }}
+      {{ if $sectionPages }}
+        {{ $pages = $sectionPages.Pages.ByWeight }}
+      {{ end }}
 
       <div class="sidebar-group">
         <button class="sidebar-group-btn{{ if $group.open }} open{{ end }}"
@@ -63,7 +50,7 @@
     <div class="docs-content">
 
       <div class="breadcrumb">
-        <a href="/docs/">Docs</a> ›
+        <a href="{{ "/docs/" | relURL }}">Docs</a> ›
         <a href="{{ .CurrentSection.RelPermalink }}">{{ .CurrentSection.Title }}</a> ›
         <span>{{ .Title }}</span>
       </div>
