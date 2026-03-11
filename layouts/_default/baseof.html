@@ -9,13 +9,15 @@
   <link rel="stylesheet" href="{{ "css/" | relURL }}{{ .Params.stylesheet | default "main" }}.css">
   <link rel="stylesheet" href="{{ "css/shortcodes.css" | relURL }}">
 </head>
-<body>
+<body class="page-{{ .Params.stylesheet | default "main" }}">
 
   {{ partial "nav.html" . }}
 
   {{ block "main" . }}{{ end }}
 
-  {{ partial "footer.html" . }}
+  {{ if ne .Params.stylesheet "docs" }}
+    {{ partial "footer.html" . }}
+  {{ end }}
 
 </body>
 </html>
