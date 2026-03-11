@@ -1,6 +1,7 @@
 ---
 title: "Introduction"
 weight: 1
+stylesheet: "docs"
 ---
 
 SEMANTICA is a design system built for teams who care about craft.
