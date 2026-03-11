@@ -15,11 +15,8 @@
 
     {{ range .Site.Data.docsSidebar.groups }}
       {{ $group := . }}
-      {{ $sectionPages := $.Site.GetPage (printf "docs/%s" $group.folder) }}
-      {{ $pages := slice }}
-      {{ if $sectionPages }}
-        {{ $pages = $sectionPages.Pages.ByWeight }}
-      {{ end }}
+      {{ $pages := where (where $.Site.Pages "Section" $group.folder) "Kind" "page" }}
+      {{ $pages = $pages.ByWeight }}
 
       <div class="sidebar-group">
         <button class="sidebar-group-btn{{ if $group.open }} open{{ end }}"
