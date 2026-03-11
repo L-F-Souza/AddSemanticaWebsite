@@ -1,10 +1,6 @@
 # ═══════════════════════════════════════════════════
 # FILE: .github/workflows/hugo.yml
-#
-# Builds and deploys the Hugo site to GitHub Pages
-# automatically on every push to the main branch.
-#
-# Site URL: https://l-f-souza.github.io/AddSemanticaWebsite
+# Site: https://l-f-souza.github.io/AddSemanticaWebsite
 # ═══════════════════════════════════════════════════
 
 name: Deploy Hugo site to GitHub Pages
@@ -12,8 +8,8 @@ name: Deploy Hugo site to GitHub Pages
 on:
   push:
     branches:
-      - main        # runs every time you push to main
-  workflow_dispatch: # also lets you trigger it manually from the Actions tab
+      - main
+  workflow_dispatch:
 
 permissions:
   contents: read
@@ -27,6 +23,8 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
     steps:
       - name: Checkout
         uses: actions/checkout@v4
