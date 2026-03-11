@@ -1,0 +1,42 @@
+baseURL = "https://l-f-souza.github.io/AddSemanticaWebsite/"
+languageCode = "en-us"
+title = "SEMANTICA"
+
+# Allow raw HTML inside markdown files
+[markup.goldmark.renderer]
+  unsafe = true
+
+[params]
+  description = "Build beautiful, accessible, and performant applications with SEMANTICA"
+
+[menu]
+  [[menu.main]]
+    name = "Home"
+    url = "/"
+    weight = 1
+  [[menu.main]]
+    name = "About"
+    url = "/about/"
+    weight = 2
+  [[menu.main]]
+    name = "Features"
+    url = "/features/"
+    weight = 3
+  [[menu.main]]
+    name = "Docs"
+    url = "/docs/"
+    weight = 4
+  [[menu.main]]
+    name = "Contact"
+    url = "/contact/"
+    weight = 5
+
+# ── MARKDOWN SETTINGS ─────────────────────────────
+# Allows shortcodes to render HTML inside markdown
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true          # needed for shortcodes that output HTML
+  [markup.highlight]
+    style = "monokai"        # syntax highlighting theme for code blocks
+    lineNos = false

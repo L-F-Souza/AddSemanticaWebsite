@@ -1,0 +1,111 @@
+{{ define "main" }}
+
+<!-- ═══════════════════════════════════════════════════
+     PAGE: Documentation
+     URL: /docs/<group>/<page>/
+     LAYOUT: layouts/docs/single.html
+     SIDEBAR CONFIG: data/docs-sidebar.yaml
+     CONTENT FILES: content/docs/<group>/*.md
+     STYLESHEET: static/css/docs.css
+     SCRIPT: static/js/docs.js
+
+     Each .md file in content/docs/ subfolders is
+     automatically picked up and listed in the sidebar.
+     Order is controlled by `weight` in each file's
+     front matter. Groups are defined in data/docs-sidebar.yaml
+════════════════════════════════════════════════════ -->
+
+<div class="docs-shell">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+
+    <div class="sidebar-search">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
+        <circle cx="11" cy="11" r="8" stroke="currentColor" stroke-width="2"/>
+        <path d="M21 21l-4.35-4.35" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+      <input type="text" placeholder="Search docs…" id="sidebar-search-input"/>
+    </div>
+
+    {{ range .Site.Data.docsSidebar.groups }}
+      {{ $group := . }}
+      {{ $sectionPath := printf "docs/%s" $group.folder }}
+      {{ $pages := where (where $.Site.Pages "Section" $sectionPath) "Kind" "page" }}
+      {{ $pages = $pages.ByWeight }}
+
+      <div class="sidebar-group">
+        <button class="sidebar-group-btn{{ if $group.open }} open{{ end }}"
+                data-group="{{ $group.id }}">
+          {{ $group.label }}
+          <svg class="chevron" width="12" height="12" viewBox="0 0 24 24" fill="none">
+            <path d="M9 18l6-6-6-6" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+
+        <div class="sidebar-links{{ if $group.open }} open{{ end }}"
+             id="group-{{ $group.id }}">
+          {{ range $pages }}
+          <a href="{{ .RelPermalink }}"
+             {{ if eq $.RelPermalink .RelPermalink }}class="active"{{ end }}>
+            {{ .Title }}
+          </a>
+          {{ end }}
+        </div>
+      </div>
+    {{ end }}
+
+  </aside>
+
+  <!-- MAIN -->
+  <div class="docs-main">
+    <div class="docs-content">
+
+      <div class="breadcrumb">
+        <a href="/docs/">Docs</a> ›
+        <a href="{{ .CurrentSection.RelPermalink }}">{{ .CurrentSection.Title }}</a> ›
+        <span>{{ .Title }}</span>
+      </div>
+
+      <h1>{{ .Title }}</h1>
+      {{ with .Params.lead }}<p class="lead">{{ . }}</p>{{ end }}
+
+      <div class="doc-body">
+        {{ .Content }}
+      </div>
+
+      <div class="doc-pagination">
+        {{ with .Params.prev }}
+          {{ $prevPage := $.Site.GetPage (printf "/docs/%s" .) }}
+          {{ if $prevPage }}
+          <a href="{{ $prevPage.RelPermalink }}">
+            <span class="pag-label">← Previous</span>
+            <span class="pag-title">{{ $prevPage.Title }}</span>
+          </a>
+          {{ else }}<div></div>{{ end }}
+        {{ else }}<div></div>{{ end }}
+
+        {{ with .Params.next }}
+          {{ $nextPage := $.Site.GetPage (printf "/docs/%s" .) }}
+          {{ if $nextPage }}
+          <a href="{{ $nextPage.RelPermalink }}" class="next">
+            <span class="pag-label">Next →</span>
+            <span class="pag-title">{{ $nextPage.Title }}</span>
+          </a>
+          {{ else }}<div></div>{{ end }}
+        {{ else }}<div></div>{{ end }}
+      </div>
+
+    </div>
+
+    <div class="docs-toc" id="docs-toc">
+      <p class="toc-label">On this page</p>
+      <ul class="toc-list" id="toc-list"></ul>
+    </div>
+  </div>
+
+</div>
+
+<script src="/js/docs.js"></script>
+{{ end }}

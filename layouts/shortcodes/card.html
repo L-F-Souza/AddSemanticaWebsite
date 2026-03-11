@@ -1,0 +1,27 @@
+{{/*
+  SHORTCODE: card
+  A content card with optional title and colour accent.
+
+  USAGE:
+    {{</* card title="Modern Design" */>}}
+    Clean, contemporary interface that feels natural and intuitive.
+    {{</* /card */>}}
+
+  OPTIONS:
+    title:  card heading (optional)
+    color:  orange (default) | teal | cyan | red
+    icon:   emoji or text icon shown above the title (optional)
+
+  EXAMPLE:
+    {{</* card title="Accessible" icon="♿" color="teal" */>}}
+    WCAG compliant components that work for everyone, everywhere.
+    {{</* /card */>}}
+*/}}
+{{ $color := .Get "color" | default "orange" }}
+{{ $title := .Get "title" | default "" }}
+{{ $icon  := .Get "icon"  | default "" }}
+<div class="sc-card sc-card--{{ $color }}">
+  {{ if $icon }}<div class="sc-card__icon">{{ $icon }}</div>{{ end }}
+  {{ if $title }}<h3 class="sc-card__title">{{ $title }}</h3>{{ end }}
+  <div class="sc-card__body">{{ .Inner | markdownify }}</div>
+</div>

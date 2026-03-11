@@ -1,0 +1,38 @@
+# ═══════════════════════════════════════════════════
+# data/docs-sidebar.yaml
+# Controls the sidebar groups in /docs/
+#
+# HOW TO USE:
+#   - Each group maps to a subfolder in content/docs/
+#   - Links are auto-built from .md files in that folder
+#   - Order of links = `weight` field in each .md file
+#   - To add a group: add an entry here + create the folder
+#   - To reorder groups: change their position in this list
+#   - Set open: true on the group that opens by default
+# ═══════════════════════════════════════════════════
+
+groups:
+  - id: getting-started
+    label: Getting Started
+    folder: getting-started
+    open: true
+
+  - id: core-concepts
+    label: Core Concepts
+    folder: core-concepts
+    open: false
+
+  - id: components
+    label: Components
+    folder: components
+    open: false
+
+  - id: accessibility
+    label: Accessibility
+    folder: accessibility
+    open: false
+
+  - id: reference
+    label: Reference
+    folder: reference
+    open: false

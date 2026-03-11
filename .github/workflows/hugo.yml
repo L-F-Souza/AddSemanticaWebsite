@@ -1,0 +1,61 @@
+# ═══════════════════════════════════════════════════
+# FILE: .github/workflows/hugo.yml
+#
+# Builds and deploys the Hugo site to GitHub Pages
+# automatically on every push to the main branch.
+#
+# Site URL: https://l-f-souza.github.io/AddSemanticaWebsite
+# ═══════════════════════════════════════════════════
+
+name: Deploy Hugo site to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main        # runs every time you push to main
+  workflow_dispatch: # also lets you trigger it manually from the Actions tab
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v3
+        with:
+          hugo-version: '0.124.1'
+          extended: true
+
+      - name: Setup Pages
+        id: pages
+        uses: actions/configure-pages@v5
+
+      - name: Build
+        run: hugo --minify --baseURL "https://l-f-souza.github.io/AddSemanticaWebsite/"
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./public
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

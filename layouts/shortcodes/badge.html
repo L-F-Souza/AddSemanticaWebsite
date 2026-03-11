@@ -1,0 +1,14 @@
+{{/*
+  SHORTCODE: badge
+  Inline pill badge for labels, statuses, versions.
+
+  USAGE:
+    {{</* badge */>}}New{{</* /badge */>}}
+    {{</* badge color="teal" */>}}Beta{{</* /badge */>}}
+    {{</* badge color="red" */>}}Deprecated{{</* /badge */>}}
+    {{</* badge color="light" */>}}v2.0{{</* /badge */>}}
+
+  OPTIONS (color):
+    orange (default) | teal | cyan | red | light | dark
+*/}}
+<span class="badge badge--{{ .Get "color" | default "orange" }}">{{ .Inner }}</span>

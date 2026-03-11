@@ -1,0 +1,68 @@
+{{ define "main" }}
+
+<!-- ═══════════════════════════════════════════════════
+     PAGE: Home (index.html)
+     CONTENT FILE: content/_index.md
+     STYLESHEET: static/css/main.css
+════════════════════════════════════════════════════ -->
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-left">
+    <h1>{{ .Params.hero_title }}</h1>
+    <p>{{ .Params.hero_subtitle }}</p>
+  </div>
+  <div class="hero-right">
+    <div class="hero-actions">
+      <a href="{{ .Params.cta_primary_url }}" class="btn-primary">{{ .Params.cta_primary_label }} →</a>
+      <a href="{{ .Params.cta_secondary_url }}" class="btn-outline">
+        <span class="play-icon"></span> {{ .Params.cta_secondary_label }}
+      </a>
+    </div>
+  </div>
+</div>
+
+<div class="section-divider"></div>
+
+<!-- WHY CHOOSE SEMANTICA -->
+<section class="features" id="features">
+  <h2>{{ .Params.why_title }}</h2>
+  <p class="features-sub">{{ .Params.why_subtitle }}</p>
+  <div class="features-grid">
+    {{ range .Params.why_cards }}
+    <div class="feature-card">
+      <div class="feature-icon">{{ .icon | safeHTML }}</div>
+      <h3>{{ .title }}</h3>
+      <p>{{ .description }}</p>
+    </div>
+    {{ end }}
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- FEATURES -->
+<section class="feat-section">
+  <div class="feat-header">
+    <div class="feat-header-left">
+      <p class="feat-eyebrow">Features</p>
+      <h2>{{ .Params.feat_title }}</h2>
+    </div>
+    <div class="feat-header-right">
+      <p>{{ .Params.feat_subtitle }}</p>
+    </div>
+  </div>
+  <div class="feat-grid">
+    {{ range .Params.features }}
+    <div class="feat-item">
+      <div class="feat-icon-wrap">{{ .icon | safeHTML }}</div>
+      <div class="feat-text">
+        <h3>{{ .title }}</h3>
+        <p>{{ .description }}</p>
+      </div>
+    </div>
+    {{ end }}
+  </div>
+</section>
+
+{{ end }}

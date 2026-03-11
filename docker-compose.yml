@@ -1,0 +1,28 @@
+# ═══════════════════════════════════════════════════
+# docker-compose.yml — SEMANTICA Hugo Site
+#
+# USAGE IN VS CODE:
+#   1. Install the "Docker" extension by Microsoft
+#   2. Open this folder in VS Code
+#   3. Right-click docker-compose.yml → "Compose Up"
+#      OR run in terminal: docker compose up
+#   4. Open http://localhost:1313 in your browser
+#   5. Edit any file — Hugo will live-reload instantly
+#
+# TO STOP:
+#   docker compose down
+#   OR press Ctrl+C in the terminal
+# ═══════════════════════════════════════════════════
+
+services:
+  hugo:
+    build: .
+    container_name: semantica-dev
+    ports:
+      - "1313:1313"
+    volumes:
+      # Mount the project folder so edits reflect instantly
+      - .:/src
+    environment:
+      - HUGO_ENV=development
+    restart: unless-stopped
