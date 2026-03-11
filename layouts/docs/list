@@ -1,0 +1,9 @@
+{{ define "main" }}
+{{ $firstGroup := index .Site.Data.docsSidebar.groups 0 }}
+{{ $firstSection := $.Site.GetPage (printf "docs/%s" $firstGroup.folder) }}
+{{ $firstPage := index ($firstSection.Pages.ByWeight) 0 }}
+{{ if $firstPage }}
+  <meta http-equiv="refresh" content="0; url={{ $firstPage.RelPermalink }}">
+  <script>window.location.href = "{{ $firstPage.RelPermalink }}";</script>
+{{ end }}
+{{ end }}
