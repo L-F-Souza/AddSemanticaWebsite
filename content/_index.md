@@ -12,7 +12,7 @@ stylesheet: "main"
 
 # ── HERO ─────────────────────────────────────────
 hero_title: "Build amazing experiences<br>with SEMANTICA"
-hero_subtitle: "Create beautiful, modern web applications with Microsoft's SEMANTICA. Built for accessibility, performance, and delightful user experiences."
+hero_subtitle: "Tranform how you manage data with SEMANTICA. Built for accessibility, performance, and delightful user experiences."
 cta_primary_label: "Get Started"
 cta_primary_url: "/docs/"
 cta_secondary_label: "Watch Demo"
