@@ -1,9 +1,51 @@
 {{ define "main" }}
-{{ $firstGroup := index .Site.Data.docsSidebar.groups 0 }}
-{{ $firstSection := $.Site.GetPage (printf "docs/%s" $firstGroup.folder) }}
-{{ $firstPage := index ($firstSection.Pages.ByWeight) 0 }}
-{{ if $firstPage }}
-  <meta http-equiv="refresh" content="0; url={{ $firstPage.RelPermalink }}">
-  <script>window.location.href = "{{ $firstPage.RelPermalink }}";</script>
-{{ end }}
+
+<div class="docs-shell">
+
+  <aside class="sidebar">
+
+    <div class="sidebar-search">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
+        <circle cx="11" cy="11" r="8" stroke="currentColor" stroke-width="2"/>
+        <path d="M21 21l-4.35-4.35" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+      <input type="text" placeholder="Search docs…" id="sidebar-search-input"/>
+    </div>
+
+    {{ range .Site.Data.docsSidebar.groups }}
+      {{ $group := . }}
+      {{ $pages := where (where $.Site.Pages "Section" $group.folder) "Kind" "page" }}
+      {{ $pages = $pages.ByWeight }}
+
+      <div class="sidebar-group">
+        <button class="sidebar-group-btn{{ if $group.open }} open{{ end }}"
+                data-group="{{ $group.id }}">
+          {{ $group.label }}
+          <svg class="chevron" width="12" height="12" viewBox="0 0 24 24" fill="none">
+            <path d="M9 18l6-6-6-6" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+
+        <div class="sidebar-links{{ if $group.open }} open{{ end }}"
+             id="group-{{ $group.id }}">
+          {{ range $pages }}
+          <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+          {{ end }}
+        </div>
+      </div>
+    {{ end }}
+
+  </aside>
+
+  <div class="docs-main">
+    <div class="docs-content">
+      <h1>{{ .Title }}</h1>
+      <p>Select a topic from the sidebar to get started.</p>
+    </div>
+  </div>
+
+</div>
+
+<script src="{{ "js/docs.js" | relURL }}"></script>
 {{ end }}
