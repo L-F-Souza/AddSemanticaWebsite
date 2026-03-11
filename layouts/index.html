@@ -1,10 +1,6 @@
 {{ define "main" }}
 
-<!-- ═══════════════════════════════════════════════════
-     PAGE: Home (index.html)
-     CONTENT FILE: content/_index.md
-     STYLESHEET: static/css/main.css
-════════════════════════════════════════════════════ -->
+<!-- PAGE: Home | CONTENT: content/_index.md | STYLESHEET: static/css/main.css -->
 
 <!-- HERO -->
 <div class="hero">
@@ -26,14 +22,14 @@
 
 <!-- WHY CHOOSE SEMANTICA -->
 <section class="features" id="features">
-  <h2>{{ .Params.why_title }}</h2>
-  <p class="features-sub">{{ .Params.why_subtitle }}</p>
+  <h2>{{ .Params.why_title | safeHTML }}</h2>
+  <p class="features-sub">{{ .Params.why_subtitle | safeHTML }}</p>
   <div class="features-grid">
     {{ range .Params.why_cards }}
     <div class="feature-card">
       <div class="feature-icon">{{ .icon | safeHTML }}</div>
-      <h3>{{ .title }}</h3>
-      <p>{{ .description }}</p>
+      <h3>{{ .title | safeHTML }}</h3>
+      <p>{{ .description | safeHTML }}</p>
     </div>
     {{ end }}
   </div>
@@ -46,10 +42,10 @@
   <div class="feat-header">
     <div class="feat-header-left">
       <p class="feat-eyebrow">Features</p>
-      <h2>{{ .Params.feat_title }}</h2>
+      <h2>{{ .Params.feat_title | safeHTML }}</h2>
     </div>
     <div class="feat-header-right">
-      <p>{{ .Params.feat_subtitle }}</p>
+      <p>{{ .Params.feat_subtitle | safeHTML }}</p>
     </div>
   </div>
   <div class="feat-grid">
@@ -57,8 +53,8 @@
     <div class="feat-item">
       <div class="feat-icon-wrap">{{ .icon | safeHTML }}</div>
       <div class="feat-text">
-        <h3>{{ .title }}</h3>
-        <p>{{ .description }}</p>
+        <h3>{{ .title | safeHTML }}</h3>
+        <p>{{ .description | safeHTML }}</p>
       </div>
     </div>
     {{ end }}
