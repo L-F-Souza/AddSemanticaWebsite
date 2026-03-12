@@ -16,10 +16,6 @@
   --t-lg:  34px;
   --t-xl:  55px;
   --t-2xl: 89px;
-
---max-w: 1280px;
-  --gutter: clamp(24px, 5vw, 80px);
-  
 }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
