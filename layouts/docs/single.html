@@ -1,95 +1,81 @@
 {{ define "main" }}
 
-<div class="docs-shell">
-
-  <!-- SIDEBAR -->
-  <aside class="sidebar">
-
-    <div class="sidebar-search">
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
-        <circle cx="11" cy="11" r="8" stroke="currentColor" stroke-width="2"/>
-        <path d="M21 21l-4.35-4.35" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-      </svg>
-      <input type="text" placeholder="Search docs…" id="sidebar-search-input"/>
+<!-- ARTICLE HEADER -->
+<div class="article-header">
+  <div class="article-header-inner">
+    <div class="article-breadcrumb">
+      <a href="{{ "/docs/" | relURL }}">Docs</a> ›
+      <a href="{{ .CurrentSection.RelPermalink }}">{{ .CurrentSection.Title }}</a> ›
+      <span>{{ .Title }}</span>
     </div>
-
-    {{ range .Site.Data.docsSidebar.groups }}
-      {{ $group := . }}
-      {{ $pages := where (where $.Site.Pages "Section" $group.folder) "Kind" "page" }}
-      {{ $pages = $pages.ByWeight }}
-
-      <div class="sidebar-group">
-        <button class="sidebar-group-btn{{ if $group.open }} open{{ end }}"
-                data-group="{{ $group.id }}">
-          {{ $group.label }}
-          <svg class="chevron" width="12" height="12" viewBox="0 0 24 24" fill="none">
-            <path d="M9 18l6-6-6-6" stroke="currentColor" stroke-width="2"
-                  stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </button>
-
-        <div class="sidebar-links{{ if $group.open }} open{{ end }}"
-             id="group-{{ $group.id }}">
-          {{ range $pages }}
-          <a href="{{ .RelPermalink }}"
-             {{ if eq $.RelPermalink .RelPermalink }}class="active"{{ end }}>
-            {{ .Title }}
-          </a>
-          {{ end }}
-        </div>
-      </div>
+    {{ with .Params.tags }}
+    <div class="article-header-tags">
+      {{ range . }}<span class="tag">{{ . }}</span>{{ end }}
+    </div>
     {{ end }}
-
-  </aside>
-
-  <!-- MAIN -->
-  <div class="docs-main">
-    <div class="docs-content">
-
-      <div class="breadcrumb">
-        <a href="{{ "/docs/" | relURL }}">Docs</a> ›
-        <a href="{{ .CurrentSection.RelPermalink }}">{{ .CurrentSection.Title }}</a> ›
-        <span>{{ .Title }}</span>
-      </div>
-
-      <h1>{{ .Title }}</h1>
-      {{ with .Params.lead }}<p class="lead">{{ . }}</p>{{ end }}
-
-      <div class="doc-body">
-        {{ .Content }}
-      </div>
-
-      <div class="doc-pagination">
-        {{ with .Params.prev }}
-          {{ $prevPage := $.Site.GetPage (printf "/docs/%s" .) }}
-          {{ if $prevPage }}
-          <a href="{{ $prevPage.RelPermalink }}">
-            <span class="pag-label">← Previous</span>
-            <span class="pag-title">{{ $prevPage.Title }}</span>
-          </a>
-          {{ else }}<div></div>{{ end }}
-        {{ else }}<div></div>{{ end }}
-
-        {{ with .Params.next }}
-          {{ $nextPage := $.Site.GetPage (printf "/docs/%s" .) }}
-          {{ if $nextPage }}
-          <a href="{{ $nextPage.RelPermalink }}" class="next">
-            <span class="pag-label">Next →</span>
-            <span class="pag-title">{{ $nextPage.Title }}</span>
-          </a>
-          {{ else }}<div></div>{{ end }}
-        {{ else }}<div></div>{{ end }}
-      </div>
-
-    </div>
-
-    <div class="docs-toc" id="docs-toc">
-      <p class="toc-label">On this page</p>
-      <ul class="toc-list" id="toc-list"></ul>
-    </div>
+    <h1>{{ .Title }}</h1>
+    {{ with .Params.description }}<p class="lead">{{ . }}</p>{{ end }}
   </div>
-
 </div>
 
-<script src="{{ "js/docs.js" | relURL }}"></script>
+<!-- ARTICLE BODY + TOC -->
+<div class="article-body-wrap">
+  <div class="article-body">
+    {{ .Content }}
+  </div>
+
+  <div class="article-toc">
+    <p class="toc-label">On this page</p>
+    <ul class="toc-list" id="toc-list"></ul>
+  </div>
+</div>
+
+<!-- PREV / NEXT -->
+<div class="article-nav">
+  {{ with .Params.prev }}
+    {{ $p := $.Site.GetPage (printf "/docs/%s" .) }}
+    {{ if $p }}
+    <a href="{{ $p.RelPermalink }}">
+      <span class="nav-label">← Previous</span>
+      <span class="nav-title">{{ $p.Title }}</span>
+    </a>
+    {{ else }}<div></div>{{ end }}
+  {{ else }}<div></div>{{ end }}
+
+  {{ with .Params.next }}
+    {{ $n := $.Site.GetPage (printf "/docs/%s" .) }}
+    {{ if $n }}
+    <a href="{{ $n.RelPermalink }}" class="next">
+      <span class="nav-label">Next →</span>
+      <span class="nav-title">{{ $n.Title }}</span>
+    </a>
+    {{ else }}<div></div>{{ end }}
+  {{ else }}<div></div>{{ end }}
+</div>
+
+<script>
+// Build TOC from h2/h3 headings
+const headings = document.querySelectorAll('.article-body h2, .article-body h3');
+const toc = document.getElementById('toc-list');
+if (toc && headings.length) {
+  headings.forEach(h => {
+    if (!h.id) h.id = h.textContent.toLowerCase().replace(/[^a-z0-9]+/g, '-');
+    const li = document.createElement('li');
+    li.className = h.tagName === 'H3' ? 'toc-h3' : '';
+    li.innerHTML = `<a href="#${h.id}">${h.textContent}</a>`;
+    toc.appendChild(li);
+  });
+
+  // Scroll spy
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      const id = e.target.id;
+      const link = toc.querySelector(`a[href="#${id}"]`);
+      if (link) link.classList.toggle('active', e.isIntersecting);
+    });
+  }, { rootMargin: '-20% 0px -70% 0px' });
+  headings.forEach(h => observer.observe(h));
+}
+</script>
+
 {{ end }}

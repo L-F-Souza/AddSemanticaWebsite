@@ -1,51 +1,94 @@
 {{ define "main" }}
 
-<div class="docs-shell">
-
-  <aside class="sidebar">
-
-    <div class="sidebar-search">
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
-        <circle cx="11" cy="11" r="8" stroke="currentColor" stroke-width="2"/>
-        <path d="M21 21l-4.35-4.35" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-      </svg>
-      <input type="text" placeholder="Search docs…" id="sidebar-search-input"/>
+<!-- HEADER -->
+<div class="docs-header">
+  <div class="docs-header-inner">
+    <div>
+      <p class="docs-eyebrow">Documentation</p>
+      <h1>Everything you need<br>to build with SEMANTICA</h1>
     </div>
-
-    {{ range .Site.Data.docsSidebar.groups }}
-      {{ $group := . }}
-      {{ $pages := where (where $.Site.Pages "Section" $group.folder) "Kind" "page" }}
-      {{ $pages = $pages.ByWeight }}
-
-      <div class="sidebar-group">
-        <button class="sidebar-group-btn{{ if $group.open }} open{{ end }}"
-                data-group="{{ $group.id }}">
-          {{ $group.label }}
-          <svg class="chevron" width="12" height="12" viewBox="0 0 24 24" fill="none">
-            <path d="M9 18l6-6-6-6" stroke="currentColor" stroke-width="2"
-                  stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </button>
-
-        <div class="sidebar-links{{ if $group.open }} open{{ end }}"
-             id="group-{{ $group.id }}">
-          {{ range $pages }}
-          <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-          {{ end }}
-        </div>
-      </div>
-    {{ end }}
-
-  </aside>
-
-  <div class="docs-main">
-    <div class="docs-content">
-      <h1>{{ .Title }}</h1>
-      <p>Select a topic from the sidebar to get started.</p>
+    <div>
+      <p class="docs-header-right">Guides, references, and examples to help you ship faster.</p>
     </div>
   </div>
-
 </div>
 
-<script src="{{ "js/docs.js" | relURL }}"></script>
+<!-- TAG FILTER BAR -->
+{{ $allTags := slice }}
+{{ range where .Site.Pages "Section" "ne" "" }}
+  {{ if eq .Kind "page" }}
+    {{ range .Params.tags }}
+      {{ $allTags = $allTags | append . }}
+    {{ end }}
+  {{ end }}
+{{ end }}
+{{ $allTags = $allTags | uniq | sort }}
+
+<div class="tag-bar">
+  <div class="tag-bar-inner">
+    <button class="tag-btn active" data-tag="all">All</button>
+    {{ range $allTags }}
+    <button class="tag-btn" data-tag="{{ . | urlize }}">{{ . }}</button>
+    {{ end }}
+  </div>
+</div>
+
+<!-- ARTICLE LIST grouped by section -->
+<div class="docs-list">
+  {{ range .Site.Sections }}
+    {{ $section := . }}
+    {{ $pages := $section.Pages.ByWeight }}
+    {{ if $pages }}
+    <div class="docs-group" data-section="{{ $section.Title | urlize }}">
+      <p class="docs-group-label">{{ $section.Title }}</p>
+      {{ range $pages }}
+      <a class="article-card" href="{{ .RelPermalink }}"
+         data-tags="{{ range .Params.tags }}{{ . | urlize }} {{ end }}">
+        <div class="article-left">
+          <div class="article-title">{{ .Title }}</div>
+          {{ with .Params.description }}<div class="article-desc">{{ . }}</div>{{ end }}
+          {{ with .Summary }}{{ if not $.Params.description }}<div class="article-desc">{{ . | plainify | truncate 120 }}</div>{{ end }}{{ end }}
+        </div>
+        <div class="article-meta">
+          {{ with .Params.tags }}
+          <div class="article-tags">
+            {{ range . }}<span class="tag">{{ . }}</span>{{ end }}
+          </div>
+          {{ end }}
+          <span class="article-arrow">→</span>
+        </div>
+      </a>
+      {{ end }}
+    </div>
+    {{ end }}
+  {{ end }}
+</div>
+
+<div style="height:80px"></div>
+
+<script>
+const btns = document.querySelectorAll('.tag-btn');
+const cards = document.querySelectorAll('.article-card');
+const groups = document.querySelectorAll('.docs-group');
+
+btns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    btns.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const tag = btn.dataset.tag;
+
+    cards.forEach(card => {
+      const tags = card.dataset.tags || '';
+      card.style.display = (tag === 'all' || tags.includes(tag)) ? '' : 'none';
+    });
+
+    groups.forEach(group => {
+      const visible = [...group.querySelectorAll('.article-card')]
+        .some(c => c.style.display !== 'none');
+      group.dataset.hidden = visible ? 'false' : 'true';
+    });
+  });
+});
+</script>
+
 {{ end }}
