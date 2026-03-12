@@ -11,8 +11,8 @@ date: 2026-01-01
 stylesheet: "main"
 
 # ── HERO ─────────────────────────────────────────
-hero_title: "Stop Looking at Reports. Start Analyzing Data <br> with <span class=\"hl hl--orange\">SEMANTICA</span>."
-hero_subtitle: "TSemantica is your Intelligence Hub Infrastructure. Move beyond dashboard decor and fragmented logic. With Semantica, you gain source-to-metric integrity, so you can trust your data, drill down to the source, and focus on solving real business challenges."
+hero_title: "Stop Looking at Reports. Start Analyzing Data <br> with <span> SEMANTICA.</span>."
+hero_subtitle: "Semantica is your Intelligence Hub Infrastructure. Move beyond dashboard decor and fragmented logic. With Semantica, you gain source-to-metric integrity, so you can trust your data, drill down to the source, and focus on solving real business challenges."
 cta_primary_label: "Get Started"
 cta_primary_url: "/docs/"
 cta_secondary_label: "Watch Demo"
@@ -20,7 +20,7 @@ cta_secondary_url: "#"
 
 # ── WHY CHOOSE SEMANTICA (6 cards) ──────────────────
 why_title: "Why choose SEMANTICA?"
-why_subtitle: "Everything you need to build world-class applications"
+why_subtitle: "Move from Dashboard Decor to in-depth analysis and consistent numbers accross your organization"
 
 why_cards:
   - icon: '<svg class="feature-icon" viewBox="0 0 40 40" fill="none"><path d="M10 30 L10 14 L20 8 L20 20 L30 14 L30 30" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M10 30 L30 30" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>'
