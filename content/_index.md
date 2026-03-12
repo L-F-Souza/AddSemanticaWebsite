@@ -49,7 +49,7 @@ feat_subtitle: "We built Semantica for teams who need <strong>clarity, not compl
 features:
   - icon: '<svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 2L2 7l10 5 10-5-10-5z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M2 17l10 5 10-5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M2 12l10 5 10-5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>'
     title: "Metric Drift?"
-    description: "Semantica delivers **centralized metrics**, with the same logic, available to everyone in your company."
+    description: "Semantica delivers centralized metrics, with the same logic available to everyone in your company."
   - icon: '<svg width="22" height="22" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.8"/><path d="M12 6v6l4 2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>'
     title: "Information Moats?"
     description: "Semantica connects data accross systems and departments, so everyone can see the same numbers."
