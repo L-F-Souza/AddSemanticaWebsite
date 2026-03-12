@@ -11,7 +11,7 @@ date: 2026-01-01
 stylesheet: "main"
 
 # ── HERO ─────────────────────────────────────────
-hero_title: "Build amazing experiences<br>with SEMANTICA"
+hero_title: "Stop Looking at Reports. Start Analyzing Data <br> with SEMANTICA"
 hero_subtitle: "Tranform how you manage data with SEMANTICA. Built for accessibility, performance, and delightful user experiences."
 cta_primary_label: "Get Started"
 cta_primary_url: "/docs/"
