@@ -42,9 +42,9 @@ why_cards:
     title: "Hallucination-Free AI"
     description: "Your AI becomes a reliable expert because it’s grounded in your pre-defined business logic. No more confident but wrong answers."
 
-# ── FEATURES SECTION (6 items) ───────────────────
+# ── PAINPOINTS SECTION (6 items) ───────────────────
 feat_title: "Everything you need,<br>nothing you don't"
-feat_subtitle: "SEMANTICA is built for teams who care about craft. Every feature is designed to reduce friction, improve consistency, and ship faster without cutting corners."
+feat_subtitle: "We built Semantica for teams who need <strong>clarity, not complexity</strong>, because your time is better spent solving business problems than wrestling with tools. Every feature is purposefully designed to <strong>eliminate friction</strong> by cutting out manual work and guesswork,<strong>ensure consistency</strong>  so your entire team operates from the same trusted logic. Semantica <strong>unlocks your business potential</strong>, turning insights into action."
 
 features:
   - icon: '<svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 2L2 7l10 5 10-5-10-5z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M2 17l10 5 10-5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M2 12l10 5 10-5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>'
