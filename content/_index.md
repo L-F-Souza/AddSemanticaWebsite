@@ -11,7 +11,7 @@ date: 2026-01-01
 stylesheet: "main"
 
 # ── HERO ─────────────────────────────────────────
-hero_title: "Stop Looking at Reports. Start Analyzing Data <br> with <span> SEMANTICA.</span>."
+hero_title: "Stop Looking at Reports. Start Analyzing Data <br> with <span style=\"color:#FA7F08\">SEMANTICA</span>"
 hero_subtitle: "Semantica is your Intelligence Hub Infrastructure. Move beyond dashboard decor and fragmented logic. With Semantica, you gain source-to-metric integrity, so you can trust your data, drill down to the source, and focus on solving real business challenges."
 cta_primary_label: "Get Started"
 cta_primary_url: "/docs/"
@@ -24,8 +24,8 @@ why_subtitle: "Move from Dashboard Decor to in-depth analysis and consistent num
 
 why_cards:
   - icon: '<svg class="feature-icon" viewBox="0 0 40 40" fill="none"><path d="M10 30 L10 14 L20 8 L20 20 L30 14 L30 30" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M10 30 L30 30" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>'
-    title: "Modern Design"
-    description: "Clean, contemporary interface that feels natural and intuitive for users."
+    title: "Source-to-Metric Integrity"
+    description: "No more guessing why numbers don’t add up. Semantica traces every metric back to its source, so you can trust your data and act with confidence."
   - icon: '<svg class="feature-icon" viewBox="0 0 40 40" fill="none"><circle cx="20" cy="18" r="10" stroke="currentColor" stroke-width="2"/><circle cx="14" cy="13" r="2.5" stroke="currentColor" stroke-width="1.5"/><circle cx="26" cy="13" r="2.5" stroke="currentColor" stroke-width="1.5"/><circle cx="20" cy="24" r="2.5" stroke="currentColor" stroke-width="1.5"/></svg>'
     title: "Theming System"
     description: "Powerful theming capabilities with light and dark mode support built-in."
