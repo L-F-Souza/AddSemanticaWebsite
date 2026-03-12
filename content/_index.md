@@ -11,8 +11,8 @@ date: 2026-01-01
 stylesheet: "main"
 
 # ── HERO ─────────────────────────────────────────
-hero_title: "Stop Looking at Reports. Start Analyzing Data <br> with SEMANTICA"
-hero_subtitle: "Tranform how you manage data with SEMANTICA. Built for accessibility, performance, and delightful user experiences."
+hero_title: "Stop Looking at Reports. Start Analyzing Data <br> with <span class=\"hl hl--orange\">SEMANTICA</span>."
+hero_subtitle: "TSemantica is your Intelligence Hub Infrastructure. Move beyond dashboard decor and fragmented logic. With Semantica, you gain source-to-metric integrity, so you can trust your data, drill down to the source, and focus on solving real business challenges."
 cta_primary_label: "Get Started"
 cta_primary_url: "/docs/"
 cta_secondary_label: "Watch Demo"
