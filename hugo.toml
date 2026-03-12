@@ -3,7 +3,7 @@ languageCode = "en-us"
 title = "SEMANTICA"
 
 [params]
-  description = "Build beautiful, accessible, and performant applications with SEMANTICA"
+  description = "SEMANTICA: Your intelligence Hub"
 
 [markup]
   [markup.goldmark]
