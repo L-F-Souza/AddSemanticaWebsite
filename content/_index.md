@@ -11,7 +11,7 @@ date: 2026-01-01
 stylesheet: "main"
 
 # ── HERO ─────────────────────────────────────────
-hero_title: "Stop Looking at Reports. Start Analyzing Data <br> with <span style=\"color:#FA7F08\">SEMANTICA</span>"
+hero_title: "Stop looking at reports. Start analyzing data <br> with <span style=\"color:#FA7F08\">SEMANTICA</span>"
 hero_subtitle: "Semantica is your Intelligence Hub Infrastructure. Move beyond dashboard decor and fragmented logic. With Semantica, you gain source-to-metric integrity, so you can trust your data, drill down to the source, and focus on solving real business challenges."
 cta_primary_label: "Get Started"
 cta_primary_url: "/docs/"
@@ -27,20 +27,20 @@ why_cards:
     title: "Source-to-Metric Integrity"
     description: "No more guessing why numbers don’t add up. Semantica traces every metric back to its source, so you can trust your data and act with confidence."
   - icon: '<svg class="feature-icon" viewBox="0 0 40 40" fill="none"><circle cx="20" cy="18" r="10" stroke="currentColor" stroke-width="2"/><circle cx="14" cy="13" r="2.5" stroke="currentColor" stroke-width="1.5"/><circle cx="26" cy="13" r="2.5" stroke="currentColor" stroke-width="1.5"/><circle cx="20" cy="24" r="2.5" stroke="currentColor" stroke-width="1.5"/></svg>'
-    title: "Theming System"
-    description: "Powerful theming capabilities with light and dark mode support built-in."
+    title: "Deep Blueprinting"
+    description: "We don’t just move your data—we map your Business Logic Infrastructure. Our Data Audit Process ensures your metrics are consistent, accurate, and aligned across your organization."
   - icon: '<svg class="feature-icon" viewBox="0 0 40 40" fill="none"><circle cx="20" cy="10" r="4" stroke="currentColor" stroke-width="2"/><path d="M12 20 Q20 16 28 20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M16 20 L14 30" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M24 20 L26 30" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M14 25 L26 25" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>'
-    title: "Accessible"
-    description: "WCAG compliant components that work for everyone, everywhere."
+    title: "Instant Global Consistency"
+    description: "Update a metric once, and it updates everywhere. No more conflicting numbers between Finance and Sales. Semantica ensures everyone is on the same page."
   - icon: '<svg class="feature-icon" viewBox="0 0 40 40" fill="none"><rect x="8" y="8" width="24" height="24" rx="4" stroke="currentColor" stroke-width="2"/><path d="M14 20 L18 24 L26 16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>'
-    title: "Component Library"
-    description: "Hundreds of ready-to-use components that follow SEMANTICA design principles out of the box."
+    title: "Granular Access Controls"
+    description: "Ensure everyone sees the same logic, but only the specific data they’re authorized to access. Structurally available, yet segmented for governance."
   - icon: '<svg class="feature-icon" viewBox="0 0 40 40" fill="none"><circle cx="20" cy="20" r="12" stroke="currentColor" stroke-width="2"/><path d="M20 8 L20 20 L28 20" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>'
-    title: "Performance First"
-    description: "Optimised for speed and efficiency, ensuring smooth experiences even on low-end devices."
+    title: "Drill-Down Traceability"
+    description: "Go from a high-level KPI to a single row in just a few clicks. Need a new metric? It’s built for you—no waiting for an analyst."
   - icon: '<svg class="feature-icon" viewBox="0 0 40 40" fill="none"><path d="M12 28 C12 22 16 18 20 18 C24 18 28 22 28 28" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="20" cy="14" r="4" stroke="currentColor" stroke-width="2"/><path d="M8 32 L32 32" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>'
-    title: "Developer Experience"
-    description: "Comprehensive documentation, TypeScript support, and intuitive APIs that teams love."
+    title: "Hallucination-Free AI"
+    description: "Your AI becomes a reliable expert because it’s grounded in your pre-defined business logic. No more confident but wrong answers."
 
 # ── FEATURES SECTION (6 items) ───────────────────
 feat_title: "Everything you need,<br>nothing you don't"
