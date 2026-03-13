@@ -1,0 +1,67 @@
+{{ define "main" }}
+
+<!-- PAGE HEADER -->
+<div class="page-header">
+  <div class="page-header-inner">
+    <div>
+      <p class="page-header-eyebrow">{{ .Params.eyebrow }}</p>
+      <h1>{{ .Params.headline | safeHTML }}</h1>
+    </div>
+    <div class="page-header-right">
+      <p>{{ .Params.lead }}</p>
+    </div>
+  </div>
+</div>
+
+<!-- CONTACT BODY -->
+<div class="contact-body">
+  <div class="contact-inner">
+
+    <div class="contact-left">
+
+      <!-- ═══════════════════════════════════════════
+           TYPEFORM EMBED — paste your embed code here
+           Replace the placeholder div below with the
+           script + div block from Typeform > Share > Embed
+           ═══════════════════════════════════════════ -->
+      <div class="typeform-placeholder">
+        <p>📋 Typeform embed goes here</p>
+        <p>Go to your Typeform → Share → Embed → copy the code and replace this block.</p>
+      </div>
+      <!-- ═══════════════════════════════════════════ -->
+
+    </div>
+
+    <div class="contact-right">
+      <div class="contact-info">
+        <h3>What happens next?</h3>
+        <div class="contact-steps">
+          <div class="contact-step">
+            <span class="step-num">01</span>
+            <div>
+              <strong>We read your message</strong>
+              <p>Every submission goes directly to our team — no bots, no auto-replies.</p>
+            </div>
+          </div>
+          <div class="contact-step">
+            <span class="step-num">02</span>
+            <div>
+              <strong>We get back to you</strong>
+              <p>Expect a reply within one business day from a real person on our team.</p>
+            </div>
+          </div>
+          <div class="contact-step">
+            <span class="step-num">03</span>
+            <div>
+              <strong>We find the right fit</strong>
+              <p>Whether it's a demo, a pilot, or just a conversation — we'll figure out the best next step together.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+{{ end }}
