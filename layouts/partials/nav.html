@@ -1,6 +1,9 @@
 <nav>
   <div class="nav-inner">
-    <a class="nav-brand" href="{{ "/" | relURL }}">{{ .Site.Title }}</a>
+    <a class="nav-brand" href="{{ "/" | relURL }}">
+      <img src="{{ "images/Logo_symbol_box_Red.svg" | relURL }}" alt="" style="height: 32px; width: auto; margin-right: 10px;">
+      {{ .Site.Title }}
+    </a>
     <ul class="nav-links">
       {{ range .Site.Menus.main }}
       <li>
