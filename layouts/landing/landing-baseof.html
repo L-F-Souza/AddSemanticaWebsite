@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>{{ .Title }} — {{ .Site.Title }}</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ "css/landing.css" | relURL }}">
+  <link rel="stylesheet" href="{{ "css/shortcodes.css" | relURL }}">
+</head>
+<body>
+
+  <!-- NAV — logo only, no links to main site -->
+  <nav class="landing-nav">
+    <div class="nav-inner">
+      <a class="nav-brand" href="#">
+        <img src="{{ "images/logo.svg" | relURL }}" alt="{{ .Site.Title }}"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='block'"/>
+        <span class="logo-fallback" style="display:none">{{ .Site.Title }}</span>
+      </a>
+    </div>
+  </nav>
+
+  {{ block "main" . }}{{ end }}
+
+  {{ partial "footer-landing.html" . }}
+
+</body>
+</html>
