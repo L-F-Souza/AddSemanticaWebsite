@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <svg
-   viewBox="44 85 120 120"
+   viewBox="38 78 132 132"
    version="1.1"
    xmlns="http://www.w3.org/2000/svg">
   <g transform="translate(308.33409,105.88952)">
     <g transform="translate(17.550978,-9.5974996)">
       <rect
-         style="fill:none;stroke:#F24405;stroke-opacity:1;stroke-width:1.165;stroke-dasharray:none"
+         style="fill:none;stroke:#F24405;stroke-opacity:1;stroke-width:2.2;stroke-dasharray:none"
          width="79.974754"
          height="79.889"
          x="-233.66475"
          y="-114.39017"
          ry="0"
          transform="rotate(-32.051694,1.9888885e-6,-7.9083436e-6)" />
-      <path style="fill:#F24405;stroke:#F24405;stroke-width:1.32292;stroke-opacity:1" d="m -258.74415,27.055684 67.9324,-0.0807" />
-      <path style="fill:#F24405;stroke:#F24405;stroke-width:1.32292;stroke-opacity:1" d="m -190.96605,-15.392826 0.2756,67.75303" />
-      <path style="fill:#F24405;stroke:#F24405;stroke-width:1.32292;stroke-opacity:1" d="m -148.57345,52.315424 -67.8084,0.0688" />
-      <path style="fill:#F24405;stroke:#F24405;stroke-width:1.32292;stroke-opacity:1" d="m -216.35655,94.756054 -0.019,-67.75861" />
-      <path style="fill:#F24405;stroke:#F24405;stroke-width:1.32292;stroke-opacity:1" d="m -242.87845,52.397564 34.8391,-45.5014502" />
-      <path style="fill:#F24405;stroke:#F24405;stroke-width:1.32292;stroke-opacity:1" d="m -216.38165,0.51927379 45.5206,34.77569021" />
-      <path style="fill:#F24405;stroke:#F24405;stroke-width:1.32292;stroke-opacity:1" d="m -164.45925,26.945324 -34.622,45.2377" />
-      <path style="fill:#F24405;stroke:#F24405;stroke-width:1.32292;stroke-opacity:1" d="m -190.57995,78.614264 -45.8276,-34.66634" />
-      <path style="fill:#F24405;stroke:#F24405;stroke-width:1.32292;stroke-opacity:1" d="m -216.38165,0.51927379 45.5206,34.77569021" />
+      <path style="fill:#F24405;stroke:#F24405;stroke-width:2.2;stroke-opacity:1" d="m -258.74415,27.055684 67.9324,-0.0807" />
+      <path style="fill:#F24405;stroke:#F24405;stroke-width:2.2;stroke-opacity:1" d="m -190.96605,-15.392826 0.2756,67.75303" />
+      <path style="fill:#F24405;stroke:#F24405;stroke-width:2.2;stroke-opacity:1" d="m -148.57345,52.315424 -67.8084,0.0688" />
+      <path style="fill:#F24405;stroke:#F24405;stroke-width:2.2;stroke-opacity:1" d="m -216.35655,94.756054 -0.019,-67.75861" />
+      <path style="fill:#F24405;stroke:#F24405;stroke-width:2.2;stroke-opacity:1" d="m -242.87845,52.397564 34.8391,-45.5014502" />
+      <path style="fill:#F24405;stroke:#F24405;stroke-width:2.2;stroke-opacity:1" d="m -216.38165,0.51927379 45.5206,34.77569021" />
+      <path style="fill:#F24405;stroke:#F24405;stroke-width:2.2;stroke-opacity:1" d="m -164.45925,26.945324 -34.622,45.2377" />
+      <path style="fill:#F24405;stroke:#F24405;stroke-width:2.2;stroke-opacity:1" d="m -190.57995,78.614264 -45.8276,-34.66634" />
+      <path style="fill:#F24405;stroke:#F24405;stroke-width:2.2;stroke-opacity:1" d="m -216.38165,0.51927379 45.5206,34.77569021" />
     </g>
   </g>
 </svg>
