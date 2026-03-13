@@ -35,7 +35,7 @@ body {
 
 nav { background: var(--bg-dark); height: 52px; }
 .nav-inner { max-width: var(--max-w); margin: 0 auto; padding: 0 var(--gutter); height: 100%; display: flex; align-items: center; justify-content: space-between; }
-.nav-brand { font-size: var(--t-sm); font-weight: 700; color: #fff; letter-spacing: 0.01em; text-decoration: none; }
+.nav-brand { font-size: var(--t-sm); font-weight: 700; color: #fff; letter-spacing: 0.01em; text-decoration: none; display: flex; align-items: center; gap: 10px; }
 .nav-links { display: flex; gap: 40px; list-style: none; }
 .nav-links a { font-size: var(--t-sm); color: rgba(255,255,255,0.9); text-decoration: none; transition: color 0.2s; }
 .nav-links a:hover { color: var(--hl-4); }
