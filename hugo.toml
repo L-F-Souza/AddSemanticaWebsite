@@ -4,7 +4,7 @@ title = "SEMANTICA"
 
 [params]
   description = "SEMANTICA: Your intelligence Hub"
-  description-footer = "SEMANTICA: a product by Mosaic.pt"
+  descriptionfooter = "SEMANTICA: a product by Mosaic.pt"
 [markup]
   [markup.goldmark]
     [markup.goldmark.renderer]
