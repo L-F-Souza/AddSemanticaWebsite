@@ -10,12 +10,7 @@
       <p>{{ .Params.hero_subtitle | safeHTML }}</p>
     </div>
     <div class="hero-right">
-      <div class="hero-actions">
-        <a href="{{ .Params.cta_primary_url }}" class="btn-primary">{{ .Params.cta_primary_label }} →</a>
-        <a href="{{ .Params.cta_secondary_url }}" class="btn-outline">
-          <span class="play-icon"></span> {{ .Params.cta_secondary_label }}
-        </a>
-      </div>
+      <div id="hero-lottie"></div>
     </div>
   </div>
 </div>
@@ -66,5 +61,18 @@
     </div>
   </div>
 </section>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    lottie.loadAnimation({
+      container: document.getElementById('hero-lottie'),
+      renderer: 'svg',
+      loop: true,
+      autoplay: true,
+      path: 'animations/Artboard_1.json'
+    });
+  });
+</script>
 
 {{ end }}
