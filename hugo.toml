@@ -4,7 +4,7 @@ title = "SEMANTICA"
 
 [params]
   description = "SEMANTICA: Your intelligence Hub"
-
+  descriptionfooter = "SEMANTICA: a product by Mosaic.pt"
 [markup]
   [markup.goldmark]
     [markup.goldmark.renderer]
@@ -17,19 +17,19 @@ title = "SEMANTICA"
   [[menu.main]]
     name = "Home"
     url = "/"
-    weight = 1
+    weight = 4
   [[menu.main]]
-    name = "About"
+    name = ""
     url = "/about/"
     weight = 2
   [[menu.main]]
-    name = "Features"
+    name = ""
     url = "/features/"
     weight = 3
   [[menu.main]]
-    name = "Docs"
+    name = ""
     url = "/docs/"
-    weight = 4
+    weight = 1
   [[menu.main]]
     name = "Contact"
     url = "/contact/"
