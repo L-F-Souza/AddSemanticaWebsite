@@ -1,0 +1,93 @@
+{{ define "main" }}
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-left">
+      <p class="hero-eyebrow">{{ .Params.eyebrow }}</p>
+      <h1>{{ .Params.headline | safeHTML }}</h1>
+      <p>{{ .Params.lead }}</p>
+      <div class="event-meta">
+        <div class="event-meta-item">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          {{ .Params.event_date }}
+        </div>
+        <div class="event-meta-item">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          {{ .Params.event_time }}
+        </div>
+        <div class="event-meta-item">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          {{ .Params.event_location }}
+        </div>
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="hero-form-wrap">
+        <p class="hero-form-eyebrow">{{ .Params.contact_eyebrow }}</p>
+        <h3>{{ .Params.contact_title }}</h3>
+        <p class="hero-form-lead">{{ .Params.contact_lead }}</p>
+        <!-- ══════════════════════════════════════════
+             TYPEFORM EMBED
+             Replace this block with the embed code
+             from Typeform → Share → Embed
+             ══════════════════════════════════════════ -->
+        <div class="form-placeholder form-placeholder--light">
+          <div class="form-placeholder-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+          </div>
+          <strong>Form goes here</strong>
+          <span>Typeform → Share → Embed → paste code here</span>
+        </div>
+        <!-- ══════════════════════════════════════════ -->
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- EVENT INFO -->
+<section class="event-info">
+  <div class="event-info-inner">
+    <div class="event-info-header">
+      <div>
+        <p class="feat-eyebrow">{{ .Params.info_eyebrow }}</p>
+        <h2>{{ .Params.info_title | safeHTML }}</h2>
+      </div>
+      <div class="feat-header-right">
+        <p>{{ .Params.info_lead }}</p>
+      </div>
+    </div>
+    <div class="event-info-grid">
+      {{ range .Params.info_items }}
+      <div class="event-info-item">
+        <div class="event-info-num">{{ .number }}</div>
+        <h3>{{ .title }}</h3>
+        <p>{{ .description }}</p>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- DEMO -->
+<section class="demo-section">
+  <div class="demo-inner">
+    <div class="demo-header">
+      <p class="feat-eyebrow">{{ .Params.demo_eyebrow }}</p>
+      <h2>{{ .Params.demo_title | safeHTML }}</h2>
+      <p>{{ .Params.demo_lead }}</p>
+    </div>
+    <div class="demo-embed">
+      <script async src="https://js.storylane.io/js/v2/storylane.js"></script>
+      <div class="sl-embed" style="position:relative;padding-bottom:calc(50.00% + 25px);width:100%;height:0;transform:scale(1)">
+        <iframe loading="lazy" class="sl-demo" src="https://app.storylane.io/demo/gqk6hs2ffytc?embed=popup" name="sl-embed" allow="fullscreen" allowfullscreen style="position:absolute;top:0;left:0;width:100%!important;height:100%!important;border:1px solid rgba(63,95,172,0.35);box-shadow:0px 0px 18px rgba(26,19,72,0.15);border-radius:10px;box-sizing:border-box;"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+{{ end }}
