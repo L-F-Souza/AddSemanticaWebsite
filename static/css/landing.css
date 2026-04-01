@@ -31,7 +31,7 @@ nav { background: var(--bg-dark); height: 52px; }
 
 /* ── HERO — dark background ──────────────────────────── */
 .hero { background: var(--bg-dark); padding: 80px 0 88px; }
-.hero-inner { max-width: var(--max-w); margin: 0 auto; padding: 0 var(--gutter); display: grid; grid-template-columns: 38.2fr 61.8fr; gap: 64px; align-items: center; }
+.hero-inner { max-width: var(--max-w); margin: 0 auto; padding: 0 var(--gutter); display: grid; grid-template-columns: 61.8fr 38.2fr; gap: 64px; align-items: center; }
 .hero-eyebrow { font-size: var(--t-xs); font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--hl-3); margin-bottom: 16px; }
 .hero-left h1 { font-size: clamp(34px, 4vw, 55px); font-weight: 700; line-height: 1.08; letter-spacing: -0.02em; color: #fff; margin-bottom: 20px; }
 .hero-left h1 span { color: var(--hl-5); }
@@ -129,4 +129,51 @@ nav { background: var(--bg-dark); height: 52px; }
   .feat-item:nth-child(odd) { border-right: none; padding-right: 0; }
   .feat-item:nth-child(even) { padding-left: 0; }
   .footer-inner { grid-template-columns: 1fr; gap: 32px; }
+}
+
+/* ── EVENT PAGE ──────────────────────────────────────── */
+
+/* Hero form card */
+.hero-form-wrap { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 10px; padding: 32px 36px; }
+.hero-form-eyebrow { font-size: var(--t-xs); font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--hl-3); margin-bottom: 10px; }
+.hero-form-wrap h3 { font-size: var(--t-md); font-weight: 700; color: #fff; margin-bottom: 10px; letter-spacing: -0.01em; }
+.hero-form-lead { font-size: var(--t-sm); line-height: 1.65; color: rgba(255,255,255,0.5); margin-bottom: 24px; }
+
+/* Light form placeholder (inside dark card) */
+.form-placeholder--light { background: rgba(255,255,255,0.04); border-color: rgba(255,255,255,0.12); min-height: 320px; }
+.form-placeholder--light strong { color: rgba(255,255,255,0.4); }
+.form-placeholder--light span { color: rgba(255,255,255,0.25); }
+.form-placeholder--light .form-placeholder-icon { border-color: rgba(255,255,255,0.15); color: rgba(255,255,255,0.25); }
+
+/* Event meta */
+.event-meta { display: flex; flex-direction: column; gap: 12px; margin-top: 32px; }
+.event-meta-item { display: flex; align-items: center; gap: 10px; font-size: var(--t-sm); color: rgba(255,255,255,0.6); }
+.event-meta-item svg { flex-shrink: 0; color: var(--hl-3); }
+
+/* Event info section */
+.event-info { background: #f7f7f7; padding: 80px 0 96px; }
+.event-info-inner { max-width: var(--max-w); margin: 0 auto; padding: 0 var(--gutter); }
+.event-info-header { display: grid; grid-template-columns: 61.8fr 38.2fr; gap: 48px; align-items: end; margin-bottom: 64px; padding-bottom: 40px; border-bottom: 1px solid #e8e8e8; }
+.event-info-header h2 { font-size: var(--t-lg); font-weight: 700; letter-spacing: -0.02em; line-height: 1.15; color: var(--text-dark); }
+.event-info-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px; background: #e8e8e8; border: 1px solid #e8e8e8; border-radius: 10px; overflow: hidden; }
+.event-info-item { background: #fff; padding: 32px 28px; transition: background 0.2s; }
+.event-info-item:hover { background: #fafafa; }
+.event-info-num { font-size: var(--t-md); font-weight: 700; color: var(--hl-5); margin-bottom: 14px; opacity: 0.6; }
+.event-info-item h3 { font-size: var(--t-sm); font-weight: 700; color: var(--text-dark); margin-bottom: 10px; }
+.event-info-item p { font-size: var(--t-sm); line-height: 1.7; color: #666; }
+
+/* Demo section */
+.demo-section { background: var(--bg-dark); padding: 80px 0 96px; }
+.demo-inner { max-width: var(--max-w); margin: 0 auto; padding: 0 var(--gutter); }
+.demo-header { margin-bottom: 48px; }
+.demo-header h2 { font-size: var(--t-lg); font-weight: 700; letter-spacing: -0.02em; line-height: 1.15; color: #fff; margin-bottom: 12px; }
+.demo-header p { font-size: var(--t-sm); line-height: 1.7; color: rgba(255,255,255,0.55); max-width: 560px; }
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .event-info-header { grid-template-columns: 1fr; }
+  .event-info-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 640px) {
+  .event-info-grid { grid-template-columns: 1fr; }
 }
