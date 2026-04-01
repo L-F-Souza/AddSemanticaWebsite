@@ -6,7 +6,7 @@ stylesheet: "landing"
 
 # HERO
 eyebrow: "Live Event"
-headline: "Join SEMANTICA and AIMSIO for a <br> <span class=\"text-orange\">LIVE DEMO</span>"
+headline: "Join SEMANTICA and AIMSIO for a <br> <span class=\"text-orange\">live demo</span>"
 lead: "See how leading field operations teams are using SEMANTICA to stop fighting data and start making decisions that matter. Reserve your spot today."
 event_date: "May 28, 2026"
 event_time: "2:00 PM — 3:30 PM EST"
@@ -24,7 +24,7 @@ info_lead: "No slides, no theory — just a live walkthrough of SEMANTICA in act
 info_items:
   - number: "01"
     title: "Customer Roundtable"
-    description: "Hear directly from a SEMANTICA customer about how they cut reporting time and improving how they use data."
+    description: "Hear directly from SEMANTICA customers about how they cut reporting time and improving how they use data."
   - number: "02"
     title: "Live product walkthrough"
     description: "Access Semantica and build custom dashboards and reports in real time — using real field operations data."
